@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/spradha1.github.io/static/css/main.5f361e03.chunk.css",
+    "main.js": "/spradha1.github.io/static/js/main.10d1063a.chunk.js",
+    "main.js.map": "/spradha1.github.io/static/js/main.10d1063a.chunk.js.map",
+    "runtime-main.js": "/spradha1.github.io/static/js/runtime-main.03cb179f.js",
+    "runtime-main.js.map": "/spradha1.github.io/static/js/runtime-main.03cb179f.js.map",
+    "static/js/2.ac8f7865.chunk.js": "/spradha1.github.io/static/js/2.ac8f7865.chunk.js",
+    "static/js/2.ac8f7865.chunk.js.map": "/spradha1.github.io/static/js/2.ac8f7865.chunk.js.map",
+    "index.html": "/spradha1.github.io/index.html",
+    "precache-manifest.c6eea4b5785f2120a0f5e2c19e1a1093.js": "/spradha1.github.io/precache-manifest.c6eea4b5785f2120a0f5e2c19e1a1093.js",
+    "service-worker.js": "/spradha1.github.io/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/spradha1.github.io/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.ac8f7865.chunk.js.LICENSE.txt": "/spradha1.github.io/static/js/2.ac8f7865.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03cb179f.js",
+    "static/js/2.ac8f7865.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.10d1063a.chunk.js"
+  ]
+}
