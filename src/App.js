@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Timeline from "./components/Timeline";
 import me from './assets/me.jpg';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -30,6 +31,7 @@ class App extends Component {
             <FontAwesomeIcon icon={["far", "paper-plane"]} size="lg" />
           </a></div>
         </div>
+        <Timeline />
       </div>
     )
   }
