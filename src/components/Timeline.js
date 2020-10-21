@@ -3,6 +3,12 @@ import firebase from '../firestore';
 import 'firebase/firestore';
 import 'firebase/storage';
 import "../styles/timeline.css";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(
+  fas
+);
 
 
 class Timeline extends Component {
@@ -48,14 +54,15 @@ class Timeline extends Component {
       return (
         <div className="Timeline">
           <div className="Chapters">
-            {chapters.map((item, index) => {
-              return <div key={index}></div>;
-            })}
+            <div id="Pointer">
+              <div><FontAwesomeIcon icon={["fas", "long-arrow-alt-down"]} size="2x" /></div>
+            </div>
+            <div id="Line"></div>
           </div>
           <div className="Scale">
             {scale.map((item, index) => {
               return (
-                <div className="scaleMarking" key={index} style={{marginRight: "1em"}}>
+                <div className="scaleMarking" key={index}>
                   <div className="year">{item}</div>
                   <div className="marking">|</div>
                 </div>
