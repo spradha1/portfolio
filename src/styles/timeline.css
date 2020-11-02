@@ -10,82 +10,62 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 82%;
-  height: 18%;
+  top: 85%;
+  height: 15%;
   width: 100%;
-  background-image: linear-gradient(#fffdd0, white);
+  background-color: white;
   box-shadow: 0 -1px 5px black;
-  overflow-x: auto;
-  /* hide scrollbar */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.Timeline::-webkit-scrollbar {
-  display: none;  /* chrome */
+  color: rgb(65, 65, 65);
 }
 
 
 /* Chapters */
-.Chapters {
+.Pointer {
   order: 0;
   min-width: 100%;
-  min-height: 50%;
-  max-height: 50%;
+  height: 35%;
   display: flex;
-  flex-direction: column;
-}
-
-#Pointer {
-  order: 0;
-  min-width: 100%;
-  min-height: 65%;
-  max-height: 65%;
-  color: rgb(23, 23, 199);
-  display: flex;
+  flex-direction: row;
   justify-content: center;
+  z-index: 10;
+  color: white;
+  background-color: darkblue;
 }
 
-#Pointer div {
-  min-height: 100%;
-}
-
-#Line {
-  order: 1;
-  min-width: 100%;
-  min-height: 35%;
-  max-height: 35%;
-  background-color: rgb(151, 151, 151);
+.Pointer div {
+  margin: auto 0;
 }
 
 /* ************** */
 
 
 /* Scale */
-.Scale {
+.ScaleMarkingBox {
   order: 1;
-  min-width: 100%;
+  width: 90%;
+  height: 65%;
+  overflow-x: scroll;
   display: flex;
   flex-direction: row;
-  min-height: 50%;
-  max-height: 50%;
-  height: 50%;
-  color: grey;
+  background-image: linear-gradient(90deg, white, rgb(255, 119, 0), white);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.scaleMarking {
+.ScaleMarkingBox::-webkit-scrollbar {
+  display: none;  /* chrome */
+}
+
+.ScaleMarking {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   text-align: center;
+  margin: auto 0;
+  padding: 0 4em;
 }
 
-.year {
-  order: 0;
-  min-width: 100%;
+.blankspace {
+  min-width: calc(50% - 5.2em);
 }
 
-.marking {
-  order: 1;
-  min-width: 100%;
-}
+/* ********************************** */

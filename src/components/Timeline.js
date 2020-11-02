@@ -53,21 +53,19 @@ class Timeline extends Component {
       for (var i=scaleStart; i<=scaleEnd; i++) { scale.push(i); }
       return (
         <div className="Timeline">
-          <div className="Chapters">
-            <div id="Pointer">
-              <div><FontAwesomeIcon icon={["fas", "long-arrow-alt-down"]} size="2x" /></div>
-            </div>
-            <div id="Line"></div>
+          <div className="Pointer">
+            <div><FontAwesomeIcon icon={["fas", "long-arrow-alt-down"]} size="2x" /></div>
           </div>
-          <div className="Scale">
+          <div className="ScaleMarkingBox">
+            <div className="blankspace"></div>
             {scale.map((item, index) => {
               return (
-                <div className="scaleMarking" key={index}>
-                  <div className="year">{item}</div>
-                  <div className="marking">|</div>
+                <div className="ScaleMarking" key={index}>
+                  {item}
                 </div>
               )
             })}
+            <div className="blankspace"></div>
           </div>
         </div>
       )
