@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Timeline from "./components/Timeline";
-import me from './assets/me.jpg';
 import './App.css';
+import Sidenav from './components/Sidenav';
+import Story from './components/Story';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -16,10 +16,8 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <div className="centerPiece">
-          <img src={me} alt="my portrait" />
-          <p>IT'S SANJIV PRADHANANG!</p>
-        </div>
+        <Sidenav />
+        <Story />
         <div className="Profiles">
           <div><a href="https://github.com/spradha1" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={["fab", "github"]} size="lg" />
@@ -31,7 +29,6 @@ class App extends Component {
             <FontAwesomeIcon icon={["far", "paper-plane"]} size="lg" />
           </a></div>
         </div>
-        <Timeline />
       </div>
     )
   }

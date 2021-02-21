@@ -1,22 +1,26 @@
 .App {
   position: absolute;
-  background-image: linear-gradient(#855103, #c5a505);
+  display: flex;
+  flex-direction: row;
   height: 100%;
   width: 100%;
+  background-image: linear-gradient(#0b2c01, #028502);
 }
 
-.centerPiece {
-  position: absolute;
-  top: 20%;
-  left: calc(50% - 83.039px);
-  text-align: center;
-  font-weight: 700;
-  color: white;
+.Sidenavmain {
+  order: 0;
+  width: 20%;
+  height: inherit;
+  background-image: linear-gradient(#855103, #b5a505);
+  box-shadow: 5px 3px 10px black;
 }
 
-.centerPiece img {
-  border-radius: 50%;
+.Storymain {
+  order: 1;
+  width: 80%;
+  height: inherit;
 }
+
 
 
 /* Profile link section */
