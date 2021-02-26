@@ -1,0 +1,69 @@
+.Storysubmain {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.story {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+  background-color: rgb(32, 32, 32);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 1px 0.5px 5px black;
+}
+
+
+/* story parts */
+.storyimagebox {
+  order: 0;
+  width: 125px;
+  float: left;
+}
+
+.storyimagebox img {
+  border-radius: 100%;
+  width: 100%;
+}
+
+.storydetails {
+  order: 1;
+  flex-grow: 1;
+  padding: 0 25px;
+}
+
+.storykhronos {
+  font-size: 0.7em;
+  color: rgb(160, 160, 160);
+}
+
+.storytitle {
+  font-weight: 700;
+}
+
+
+/* Profile link section */
+.Profiles {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  padding: 15px;
+  box-shadow: 0 0.5px 5px black;
+}
+
+.Profiles div {
+  margin: 0.5em;
+  color: white;
+}
+
+.Profiles a {
+  padding: 10px;
+  color: inherit;
+}
+
+.Profiles a:hover {
+  border-radius: 10%;
+  box-shadow: 0.5px 0.5px 5px black, -0.5px -0.5px 5px black;
+}
