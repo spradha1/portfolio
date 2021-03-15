@@ -1,31 +1,63 @@
 import React, { Component } from 'react';
 import '../styles/story.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import me from '../assets/me.jpg';
+import firebase from '../firestore';
+import 'firebase/firestore';
+import 'firebase/storage';
 
 
 class Story extends Component {
 
   state = {
-    stories: [
-      {
-        title: "Preamble",
-        khronos: "",
-        text: "Hey, you have stumbled onto the profile of Sanjiv Pradhanang. This page is designated to introduce myself to current & prospective colleagues."
-      },
-      {
-        title: "Started at Cerner Corporation",
-        khronos: "01/20",
-        text: "My first full-time job, as a Software Engineer",
-        image: {me},
-        link: "https://www.cerner.com"
-      }
-    ]
+    stories: [],
+    loaded: false
   }
 
-  render () {
-    var stories = this.state.stories;
+  componentDidMount = () => {
+    this.fetchStories();
+  }
 
+
+  // get stories collection data from firestore
+  fetchStories = () => {
+    const db = firebase.firestore();
+    const storage = firebase.storage().ref();
+    const holder = this.state.stories;
+    const storiesRef = db.collection('stories');
+    storiesRef.get().then((snapshot) => {
+      snapshot.docs.forEach(doc => {
+        let item = doc.data();  
+        if (item.image != null) {
+          storage.child(`${item.image}`).getDownloadURL().then(url => {
+            item.url = url;
+          }).then(() => {
+            holder.push(item);
+            this.setState({stories: holder});
+          }).catch(function(e) {
+            console.log(e.message);
+          });
+        }
+        else {
+          holder.push(item);
+          this.setState({stories: holder});
+        }
+      });
+    });
+  }
+
+  // compare function for stories via timestamps to sort them in reverse chronological order
+  storyTimestamps = (a, b) => {
+    if (a.timestamp > b.timestamp)
+      return -1;
+    else
+      return 1;
+  }
+
+
+  render () {
+    
+    var stories = this.state.stories;
+    stories.sort(this.storyTimestamps);
     return (
       <div className="Storymain">
         <div className="Profiles">
@@ -40,21 +72,23 @@ class Story extends Component {
           </a></div>
         </div>
         <div className="Storysubmain">
-          {stories.map( (story, idx) => {   
+          {stories.map((story, idx) => {
             return (
               <div className="story" key={idx}>
-                {/* never use image with no link */}
-                {story.image == null ?
-                  "" : (
+                {story.image != null ?
                   <div className="storyimagebox">
                     <a rel='noopener noreferrer' target='_blank' href={story.link}>
-                      <img src={me} alt='link preview' />
+                      <img src={story.url} alt='Related view' />
                     </a>
                   </div>
-                  )
+                  : ""
                 }
                 <div className="storydetails">
-                  <span className="storykhronos">{story.khronos}</span> &nbsp;
+                  {story.khronos == null ?
+                    "" : (
+                      <span className="storykhronos">{story.khronos}</span>
+                    )
+                  }
                   <span className="storytitle">{story.title}</span>
                   <p>{story.text}</p>
                 </div>
