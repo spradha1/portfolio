@@ -1,3 +1,9 @@
+.Sidenavmain {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
 .ProfileImageBox {
   padding: 35px 0;
 }

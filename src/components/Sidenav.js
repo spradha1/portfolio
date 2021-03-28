@@ -11,6 +11,7 @@ class Sidenav extends Component {
         <div className="ProfileImageBox">
           <img id="ProfileImage" src={me} alt="Sanjiv Pradhanang" />
         </div>
+        SANJIV P.
       </div>
     )
   }

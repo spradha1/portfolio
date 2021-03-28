@@ -19,4 +19,6 @@
   order: 1;
   width: 80%;
   height: inherit;
+  display: flex;
+  flex-direction: column;
 }

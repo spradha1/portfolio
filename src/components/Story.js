@@ -61,6 +61,7 @@ class Story extends Component {
     return (
       <div className="Storymain">
         <div className="Profiles">
+          <div id="timelinetitle">TIMELINE</div>
           <div><a href="https://github.com/spradha1" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={["fab", "github"]} size="lg" />
           </a></div>
