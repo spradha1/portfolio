@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import '../styles/story.css';
+import '../styles/info.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import firebase from '../firestore';
 import 'firebase/firestore';
 import 'firebase/storage';
 
 
-class Story extends Component {
+class Info extends Component {
 
   state = {
     stories: [],
@@ -59,9 +59,9 @@ class Story extends Component {
     var stories = this.state.stories;
     stories.sort(this.storyTimestamps);
     return (
-      <div className="Storymain">
+      <div className="Info">
         <div className="Profiles">
-          <div id="timelinetitle">TIMELINE</div>
+          <div id="sectiontitle">TIMELINE</div>
           <div><a href="https://github.com/spradha1" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={["fab", "github"]} size="lg" />
           </a></div>
@@ -72,34 +72,36 @@ class Story extends Component {
             <FontAwesomeIcon icon={["far", "paper-plane"]} size="lg" />
           </a></div>
         </div>
-        <div className="Storysubmain">
-          {stories.map((story, idx) => {
-            return (
-              <div className="story" key={idx}>
-                {story.image != null ?
-                  <div className="storyimagebox">
-                    <a rel='noopener noreferrer' target='_blank' href={story.link}>
-                      <img src={story.url} alt='Related view' />
-                    </a>
-                  </div>
-                  : ""
-                }
-                <div className="storydetails">
-                  {story.khronos == null ?
-                    "" : (
-                      <span className="storykhronos">{story.khronos}</span>
-                    )
+        <div className="Infomeat">
+          <div className="Storymain">
+            {stories.map((story, idx) => {
+              return (
+                <div className="story" key={idx}>
+                  {story.image != null ?
+                    <div className="storyimagebox">
+                      <a rel='noopener noreferrer' target='_blank' href={story.link}>
+                        <img src={story.url} alt='Related view' />
+                      </a>
+                    </div>
+                    : ""
                   }
-                  <span className="storytitle">{story.title}</span>
-                  <p>{story.text}</p>
+                  <div className="storydetails">
+                    {story.khronos == null ?
+                      "" : (
+                        <span className="storykhronos">{story.khronos}</span>
+                      )
+                    }
+                    <span className="storytitle">{story.title}</span>
+                    <p>{story.text}</p>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default Story;
+export default Info;

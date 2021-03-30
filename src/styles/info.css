@@ -1,0 +1,108 @@
+/* Profile header section */
+
+.Profiles {
+  position: fixed;
+  top: 0;
+  width: inherit;
+  box-shadow: 0 0.5px 5px black;
+  color: white;
+  padding: 20px 0;
+  height: 30px;
+  background: inherit;
+}
+
+#sectiontitle {
+  float: left;
+  padding: 6px 0;
+  vertical-align: text-bottom;
+}
+
+.Profiles div {
+  float: right;
+  margin: 0 20px;
+  padding: 4.336px 0;
+}
+
+.Profiles a {
+  margin: auto;
+  padding: 15px;
+  color: inherit;
+}
+
+.Profiles a:hover {
+  border-radius: 10%;
+  box-shadow: 0.5px 0.5px 5px rgb(66, 66, 66), -0.5px -0.5px 5px rgb(66, 66, 66);
+}
+
+
+/* Main Info container */
+
+.Infomeat {
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+}
+
+
+/* Stories section */
+
+.Storymain {
+  order: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 0 10px;
+  box-shadow: 0 0.5px 5px black;
+}
+
+.story {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  background: rgb(37, 37, 37, 1);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 1px 0.5px 5px black;
+}
+
+
+/* Story parts */
+.storyimagebox {
+  order: 0;
+  min-width: 75px;
+  max-width: 75px;
+  float: left;
+  padding-right: 1em;
+}
+
+.storyimagebox img {
+  border-radius: 12px;
+  width: 100%;
+}
+
+.storyimagebox img:hover {
+  opacity: 0.5;
+}
+
+.storydetails {
+  order: 1;
+  flex-grow: 1;
+  font-weight: 350;
+}
+
+.storykhronos {
+  font-size: 0.7em;
+  color: rgb(160, 160, 160);
+  padding-right: 1em;
+}
+
+.storytitle {
+  font-weight: 700;
+}
+
+
+/* Contact section */
+
+.Contactmain {
+  order: 1;
+}

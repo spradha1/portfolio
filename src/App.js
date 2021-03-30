@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Sidenav from './components/Sidenav';
-import Story from './components/Story';
+import Info from './components/Info';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <Sidenav />
-        <Story />
+        <Info />
       </div>
     )
   }
