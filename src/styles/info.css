@@ -5,13 +5,13 @@
   top: 0;
   width: inherit;
   box-shadow: 0 0.5px 5px black;
-  color: white;
   padding: 20px 0;
   height: 30px;
+  z-index: 8;
   background: inherit;
 }
 
-#sectiontitle {
+#topbarclock {
   float: left;
   padding: 6px 0;
   vertical-align: text-bottom;
@@ -41,6 +41,12 @@
   display: flex;
   flex-direction: column;
   padding-top: 70px;
+  z-index: 5;
+}
+
+.Infomeat > div {
+  padding: 10px 10px 10px 10px;
+  box-shadow: 0 0.5px 5px black;
 }
 
 
@@ -50,14 +56,12 @@
   order: 0;
   display: flex;
   flex-direction: column;
-  padding: 10px 10px 0 10px;
-  box-shadow: 0 0.5px 5px black;
 }
 
 .story {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
+  margin-top: 10px;
   background: rgb(37, 37, 37, 1);
   color: white;
   padding: 15px;
@@ -105,4 +109,50 @@
 
 .Contactmain {
   order: 1;
+}
+
+form div {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 5px auto 5px auto;
+  padding: 10px 0;
+}
+
+label {
+  order: 0;
+  width: 30%;
+  text-align: left;
+}
+
+.formvalue {
+  order: 1;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 10em;
+  resize: none;
+}
+
+.submitbutton {
+  padding: 0;
+}
+
+input[type=submit] {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #019e06;
+  color: white;
+  padding: 1em;
+  font-weight: 900;
+}
+
+input[type=submit]:hover {
+  background-color: #005003;
 }
