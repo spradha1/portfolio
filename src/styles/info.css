@@ -71,6 +71,7 @@
 
 
 /* Story parts */
+
 .storyimagebox {
   order: 0;
   min-width: 75px;
@@ -115,8 +116,7 @@ form div {
   display: flex;
   flex-direction: row;
   width: 50%;
-  margin: 5px auto 5px auto;
-  padding: 10px 0;
+  margin: 10px auto;
 }
 
 label {
@@ -128,13 +128,21 @@ label {
 .formvalue {
   order: 1;
   width: 70%;
-  border: none;
   border-radius: 5px;
 }
 
 textarea {
   height: 10em;
   resize: none;
+}
+
+.formvalue:focus {
+  outline: none;
+  box-shadow: 0.5px 0.5px 5px yellowgreen, -0.5px 0.5px 5px yellowgreen;
+}
+
+.form-error {
+  color: red;
 }
 
 .submitbutton {
