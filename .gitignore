@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # api keys
-src/firestore.js
+src/firebasestore.js
 src/email.js
