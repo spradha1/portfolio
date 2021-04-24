@@ -106,10 +106,36 @@
 }
 
 
+/* Gallery section */
+
+.Gallerymain {
+  order: 1;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+}
+
+.galleryImage {
+  padding: 0 5px;
+  text-align: center;
+  height: 25em;
+}
+
+.galleryImage img {
+  width: 100%;
+  height: 22em;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+
 /* Contact section */
 
 .Contactmain {
-  order: 1;
+  order: 2;
 }
 
 form div {

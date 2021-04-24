@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Story from './Story';
 import Contact from './Contact';
+import Gallery from './Gallery';
 import '../styles/info.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -39,6 +40,7 @@ class Info extends Component {
         </div>
         <div className="Infomeat">
           <Story />
+          <Gallery />
           <Contact />
         </div>
       </div>
