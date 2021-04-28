@@ -12,10 +12,16 @@ library.add(
 
 class App extends Component {
 
+  scrollOnNavClick = (eid) => {
+    const el = document.querySelector("#" + eid);
+    window.scroll({ top: (el.offsetTop - 70), left: 0, behavior: 'smooth' }); // adjusting to 70 px fixed header
+  }
+
+
   render () {
     return (
       <div className="App">
-        <Sidenav />
+        <Sidenav scrollOnNavClick={this.scrollOnNavClick} />
         <Info />
       </div>
     )

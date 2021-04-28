@@ -84,7 +84,7 @@ class Contact extends Component {
 
   render () {
     return (
-      <div className="Contactmain">
+      <div className="Contactmain" id="Contact">
         <h3>CONTACT ME</h3>
         <p>You can reach out to me by filling out the form below and I will try to get back to you ASAP. You can also email me through your own mail client through the leftmost option provided on the top menu, and check out my GitHub and LinkedIn profiles as well.</p>
         <form onSubmit={this.handleSubmit}>

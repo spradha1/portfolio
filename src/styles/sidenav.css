@@ -1,9 +1,3 @@
-.Sidenavmain {
-  color: white;
-  text-align: center;
-  font-weight: 600;
-}
-
 .ProfileImageBox {
   padding: 35px 0;
 }
@@ -13,4 +7,19 @@
   margin: auto;
   width: 60%;
   border-radius: 100%;
+}
+
+.navlinks {
+  padding: 2em;
+}
+
+.navoption {
+  padding: 1em 0;
+  margin: 1em 0;
+}
+
+.navoption:hover {
+  cursor: pointer;
+  color: rgb(179, 176, 176);
+  box-shadow: 0 2px 4px rgb(66, 66, 66);
 }

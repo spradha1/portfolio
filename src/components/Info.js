@@ -15,15 +15,19 @@ class Info extends Component {
 
   render () {
 
+    // Date computation
     const date = new Date();
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const days = ['Sun', 'Mon', 'Tues', 'Wednes', 'Thurs', 'Fri', 'Satur'];
     var hours = date.getHours();
     var minutes = date.getMinutes();
+    minutes = minutes < 10 ? "0" + minutes: minutes;
     var clock = hours > 12 ? hours%12 + ":" + minutes: hours + ":" + minutes;
     clock += hours < 12 ? " AM": " PM";
     const datestring = days[date.getDay()] + 'day, ' + months[date.getMonth()] + ' ' + date.getDate() + ", " + date.getFullYear() + ', ' + clock;
     
+    
+
     return (
       <div className="Info">
         <div className="Profiles">
@@ -38,7 +42,7 @@ class Info extends Component {
             <FontAwesomeIcon icon={["far", "paper-plane"]} size="lg" />
           </a></div>
         </div>
-        <div className="Infomeat">
+        <div className="Infomeat" id="Infomeat">
           <Story />
           <Gallery />
           <Contact />

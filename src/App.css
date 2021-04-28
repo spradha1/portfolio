@@ -9,6 +9,9 @@
 
 .Sidenavmain {
   position: fixed;
+  color: white;
+  text-align: center;
+  font-weight: 600;
   order: 0;
   width: 20%;
   height: 100%;

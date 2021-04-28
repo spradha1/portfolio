@@ -57,7 +57,7 @@ class Story extends Component {
     stories.sort(this.storyTimestamps);
 
     return (
-      <div className="Storymain">
+      <div className="Storymain" id="Story">
         <h3>TIMELINE</h3>
         {stories.map((story, idx) => {
           return (

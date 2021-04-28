@@ -42,7 +42,7 @@ class Gallery extends Component {
     var gallery = this.state.gallery;
     
     return (
-      <div className="Gallerymain">
+      <div className="Gallerymain" id="Gallery">
 				<h3>IMAGE GALLERY: ONE FOR EACH CITY I HAVE VISITED</h3>
         <div className="galleryGrid">
           {gallery.map((photo, idx) => {
