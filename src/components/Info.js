@@ -18,18 +18,18 @@ class Info extends Component {
     // Date computation
     const date = new Date();
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const days = ['Sun', 'Mon', 'Tues', 'Wednes', 'Thurs', 'Fri', 'Satur'];
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     var hours = date.getHours();
     var minutes = date.getMinutes();
     minutes = minutes < 10 ? "0" + minutes: minutes;
     var clock = hours > 12 ? hours%12 + ":" + minutes: hours + ":" + minutes;
     clock += hours < 12 ? " AM": " PM";
-    const datestring = days[date.getDay()] + 'day, ' + months[date.getMonth()] + ' ' + date.getDate() + ", " + date.getFullYear() + ', ' + clock;
+    const datestring = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ", " + date.getFullYear() + ', ' + clock;
     
     
 
     return (
-      <div className="Info">
+      <div className="Infomain">
         <div className="Profiles">
           <div id="topbarclock">{datestring}</div>
           <div><a href="https://github.com/spradha1" target="_blank" rel="noopener noreferrer">
@@ -42,7 +42,7 @@ class Info extends Component {
             <FontAwesomeIcon icon={["far", "paper-plane"]} size="lg" />
           </a></div>
         </div>
-        <div className="Infomeat" id="Infomeat">
+        <div className="Infomeat">
           <Story />
           <Gallery />
           <Contact />

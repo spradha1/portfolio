@@ -73,10 +73,10 @@ class Story extends Component {
               <div className="storydetails">
                 {story.khronos == null ?
                   "" : (
-                    <span className="storykhronos">{story.khronos}</span>
+                    <div className="storykhronos">{story.khronos}</div>
                   )
                 }
-                <span className="storytitle">{story.title}</span>
+                <div className="storytitle">{story.title}</div>
                 <p>{story.text}</p>
               </div>
             </div>

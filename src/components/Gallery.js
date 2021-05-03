@@ -43,11 +43,11 @@ class Gallery extends Component {
     
     return (
       <div className="Gallerymain" id="Gallery">
-				<h3>IMAGE GALLERY: ONE FOR EACH CITY I HAVE VISITED</h3>
+				<h3>IMAGE GALLERY</h3>
         <div className="galleryGrid">
           {gallery.map((photo, idx) => {
             return (
-              <div className="galleryImage" key={idx}>
+              <div className="galleryImageBox" key={idx}>
                 <img src={photo.url} alt='Related view' />
                 {photo.details}
               </div>

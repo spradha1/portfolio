@@ -1,30 +1,37 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 .App {
   position: absolute;
   display: flex;
-  flex-direction: row;
-  min-height: 100%;
+  flex-flow: column wrap;
   width: 100%;
+  height: 100%;
   background: rgb(30, 30, 30, 1);
 }
 
 .Sidenavmain {
-  position: fixed;
+  order: 0;
+  height: 100%;
+  width: 250px;
   color: white;
   text-align: center;
   font-weight: 600;
-  order: 0;
-  width: 20%;
-  height: 100%;
+  padding: 2em 0;
   z-index: 10;
   border-right: 0.5px solid rgb(85, 85, 85);
   background: inherit;
 }
 
-.Info {
+.Infomain {
   order: 1;
-  width: 80%;
   height: 100%;
-  padding-left: 20%;
+  width: calc(100% - 250.5px);
+  display: flex;
+  flex-direction: column;
   color: white;
   background: inherit;
 }

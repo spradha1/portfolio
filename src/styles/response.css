@@ -1,0 +1,146 @@
+/* Responsive styles */
+
+/* squeee Profiles menu & stretch Contact form */
+@media screen and (max-width: 950px) {
+
+  .Profiles {
+		width: calc(100% - 250px);
+		padding: 20px 10px !important;
+	}
+
+	.Profiles div {
+		margin: 0 10px !important;
+	}
+
+	.Infomeat h3 {
+		text-align: center;
+	}
+
+	.formunit {
+		width: calc(100% - 2em) !important;
+	}
+
+	.submitbutton {
+		margin-right: 1em !important;
+	}
+
+}
+
+
+/* Pull Sidenav on top and push Profiles menu on the bottom */
+@media screen and (max-width: 715px) {
+
+	.App {
+		flex-flow: column;
+	}
+
+	.Sidenavmain, .Infomain {
+		width: 100%;
+	}
+
+
+	.Sidenavmain {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 6em;
+		padding: 0 0 0.5em 0;
+		border: none;
+		box-shadow: 0 0.5px 5px black;
+	}
+
+	#PortraitBox, #Portrait {
+		display: none;
+	}
+
+	#PortraitCaption {
+		order: 1;
+		width: 100%;
+		height: 3em;
+		margin: 0 !important;
+		padding: 1em 0;
+	}
+
+	.navlinks {
+		order: 2;
+		width: 100%;
+		height: 3em;
+		padding: 0 !important;
+	}
+
+	.navoption {
+		display: inline;
+		height: 100%;
+		padding: 1em 2em !important;
+		margin: 0 !important;
+	}
+
+	.navoption:hover {
+		box-shadow: 0 -2px 2px rgb(66, 66, 66) !important;
+	}
+
+
+	.Infomain {
+		height: calc(100% - 6em);
+	}
+
+	.Infomeat {
+		order: 0;
+		margin: 0 0 70px 0 !important;
+	}
+
+	.Profiles {
+		order: 1;
+		width: 100%;
+		top: calc(100% - 70px) !important;
+  	box-shadow: 0 -0.5px 5px black;
+	}
+
+}
+
+
+/* Squeeze Sidenav & Contact menu, remove story images & remove clock */
+@media screen and (max-width: 440px) {
+
+	.navoption {
+		font-size: 14px;
+		padding: 1em 0.5em !important;
+		font-weight: lighter;
+	}
+
+	#topbarclock {
+		display: none;
+	}
+
+	.Profiles {
+		display: flex;
+		justify-content: center;
+	}
+
+
+	.storyimagebox {
+		display: none;
+	}
+
+	.storykhronos {
+		margin-bottom: 5px;
+		padding: 0 !important;
+	}
+
+	.storykhronos, .storytitle {
+		display: block !important;
+		width: 100%;
+		text-align: center;
+	}
+
+
+	.formunit {
+		flex-direction: column !important;
+		min-width: 200px;
+	}
+
+	label, .formvalue {
+		width: 100% !important;
+	}
+
+}

@@ -72,12 +72,12 @@ class Contact extends Component {
       emailParams,
       emailConfig.user_id
     ).then(function(response) {
-      alert('Your message is sent to Sanjiv!');
       document.querySelector('#name').value = "";
       document.querySelector('#email').value = "";
       document.querySelector('#message').value = "";
+      alert('Your message is sent to Sanjiv!');
     }, function(error) {
-      alert('Your message failed to send. If problem persists, use the leftmost option on the top menu to use your email client to send me a message.');
+      alert('Your message failed to send. If problem persists, use the option on the menu to send me an email.');
     });
   }
 
@@ -86,17 +86,17 @@ class Contact extends Component {
     return (
       <div className="Contactmain" id="Contact">
         <h3>CONTACT ME</h3>
-        <p>You can reach out to me by filling out the form below and I will try to get back to you ASAP. You can also email me through your own mail client through the leftmost option provided on the top menu, and check out my GitHub and LinkedIn profiles as well.</p>
+        <p>You can reach out to me by filling out the form below and I will try to get back to you ASAP. There is also an option on the menu to email me. Check out my GitHub and LinkedIn profiles as well!</p>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="formunit">
             <label>Name*</label>
             <input className="formvalue" id="name" type="text" />
           </div>
-          <div>
+          <div className="formunit">
             <label>Email*</label>
             <input className="formvalue" id="email" type="text" />
           </div>
-          <div>
+          <div className="formunit">
             <label>Message*</label>
             <textarea className="formvalue" id="message" placeholder="Type your message"></textarea>
           </div>

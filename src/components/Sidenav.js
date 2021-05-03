@@ -9,10 +9,10 @@ class Sidenav extends Component {
     
     return (
       <div className="Sidenavmain">
-        <div className="ProfileImageBox">
-          <img id="ProfileImage" src={me} alt="Sanjiv Pradhanang" />
+        <div className="PortraitBox">
+          <img id="Portrait" src={me} alt="Sanjiv Pradhanang" />
         </div>
-        SANJIV P.
+        <div id="PortraitCaption">SANJIV P.</div>
         <div className="navlinks">
           <div className="navoption" onClick={() => this.props.scrollOnNavClick("Story")}>TIMELINE</div>
           <div className="navoption" onClick={() => this.props.scrollOnNavClick("Gallery")}>GALLERY</div>

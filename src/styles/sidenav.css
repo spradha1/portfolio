@@ -1,16 +1,19 @@
-.ProfileImageBox {
-  padding: 35px 0;
-}
-
-#ProfileImage {
-  display: block;
+#Portrait {
   margin: auto;
   width: 60%;
   border-radius: 100%;
 }
 
+#PortraitCaption {
+  margin: 2em 0;
+  color: rgb(202, 206, 1);
+  font-family: sans-serif;
+  font-weight: bold;
+  text-shadow: 0 1px beige;
+}
+
 .navlinks {
-  padding: 2em;
+  padding: 1em;
 }
 
 .navoption {
