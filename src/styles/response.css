@@ -144,3 +144,12 @@
 	}
 
 }
+
+
+/* landscape orientation on phone screens */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+	.Sidenavmain {
+		overflow-y: scroll;
+	}
+}
