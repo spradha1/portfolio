@@ -8,10 +8,10 @@ class Contact extends Component {
   constructor (props) {
     super(props);
     this.state = {
-
+      formMessage: '',
+      submitting: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.verifyEmail = this.verifyEmail.bind(this);
     this.sendEmail = this.sendEmail.bind(this);
   }
 
@@ -23,42 +23,17 @@ class Contact extends Component {
     const email = document.querySelector('#email').value;
     const message = document.querySelector('#message').value;
 
-    const formError = document.querySelector('.form-error');
-    formError.innerHTML = "";
-    var formFailed = false;
-
-    if (name === "" || email === "" || message === "") {
-      formError.innerHTML += "Some value is missing.<br>";
-      formFailed = true;
-    }
-    if (email.length > 0) {
-      if (!this.verifyEmail(email)) {
-        formFailed = true;
-      }
-    }
-
-    if (!formFailed) {
-      this.sendEmail(name, email, message);
-    }
-  }
-
-
-  // verify email pattern
-  verifyEmail = (email) => {
-    const formError = document.querySelector('.form-error');
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    const matches = email.match(emailRegex);
-
-    if (email.length === 0 || !matches) {
-      formError.innerHTML += "Email address is not valid.";
-      return false;
-    }
-    return true;
+    this.sendEmail(name, email, message);
   }
 
 
   // send email to the webmaster with all submission information
-  sendEmail = (name, email, message) => {
+  sendEmail = async (name, email, message) => {
+    const out = this;
+    this.setState({
+      formMessage: '',
+      submitting: true
+    });
     let emailParams = {
       from_name: name,
       from_email: email,
@@ -66,45 +41,53 @@ class Contact extends Component {
       message: message
     }
 
-    emailjs.send(
+    await emailjs.send(
       emailConfig.service_id,
       emailConfig.template_id,
       emailParams,
       emailConfig.user_id
     ).then(function(response) {
-      document.querySelector('#name').value = "";
-      document.querySelector('#email').value = "";
-      document.querySelector('#message').value = "";
-      alert('Your message is sent to Sanjiv!');
+      document.querySelector('.ContactForm').reset();
+      out.setState({ 
+        formMessage: 'Your message is sent to Sanjiv!',
+        submitting: false
+      });
     }, function(error) {
-      alert('Your message failed to send. If problem persists, use the option on the menu to send me an email.');
+      out.setState({
+        formMessage: 'Message failed to send. If problem persists, use the option on the menu to send me an email.',
+        submitting: false
+      });
     });
   }
 
 
   render () {
+
+    const {formMessage, submitting} = this.state;
     return (
       <div className="Contactmain" id="Contact">
         <h3>CONTACT ME</h3>
         <p>You can reach out to me by filling out the form below and I will try to get back to you ASAP. There is also an option on the menu to email me. Check out my GitHub and LinkedIn profiles as well!</p>
-        <form onSubmit={this.handleSubmit}>
+        {formMessage &&
+          <div className="FormMessage">
+            {formMessage}
+          </div>
+        }
+        <form className="ContactForm" onSubmit={this.handleSubmit}>
           <div className="formunit">
             <label>Name*</label>
-            <input className="formvalue" id="name" type="text" />
+            <input className="formvalue" id="name" type="text" required />
           </div>
           <div className="formunit">
             <label>Email*</label>
-            <input className="formvalue" id="email" type="text" />
+            <input className="formvalue" id="email" type="email" required />
           </div>
           <div className="formunit">
             <label>Message*</label>
-            <textarea className="formvalue" id="message" placeholder="Type your message"></textarea>
+            <textarea className="formvalue" id="message" placeholder="Type your message" required ></textarea>
           </div>
-          <div className='form-error'></div>
-          <div className="submitbutton">
-            <input type="submit" value="SUBMIT" />
-          </div>
-      </form>
+          <button disabled={submitting} type="submit" className="submitbutton">SUBMIT</button>
+        </form>
       </div>
     )
   }

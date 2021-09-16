@@ -186,19 +186,18 @@ textarea {
   box-shadow: 0.5px 0.5px 5px yellowgreen, -0.5px 0.5px 5px yellowgreen;
 }
 
-.form-error {
-  color: red;
+.FormMessage {
+  background-color: blue;
+  padding: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .submitbutton {
   float: right;
   margin-right: 17%;
   width: 100px;
-}
-
-input[type=submit] {
-  width: 100%;
-  height: 100%;
   border: none;
   cursor: pointer;
   border-radius: 8px;
@@ -207,7 +206,9 @@ input[type=submit] {
   padding: 1em;
   font-weight: 900;
 }
-
-input[type=submit]:hover {
-  background-color: #005003;
+.submitbutton:hover {
+  background: linear-gradient(#019e06, #005003);
+}
+.submitbutton:disabled {
+  background-color: grey;
 }
